@@ -25,18 +25,43 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import { Link, NativeRouter, Route, Routes } from 'react-router-native';
 import Btbuoi3 from './src/screen/btbuoi3';
+import Btbuoi5 from './src/screen/btbuoi5';
+import Todo from './src/screen/todo';
 
 
 const Home = () => {
+  const list = [{
+    title : 'BT Buoi 3',
+    to :'buoi3'
+  },
+  {
+    title : 'BT Buoi 5',
+    to : 'buoi5'
+  },
+  {
+    title : 'To Do App',
+    to : 'todo'
+  }]
   return (
     <View style = {styles.home}>
       <Text style = {styles.headerText}> 
         Danh sach Bai tap :
       </Text>
-      <Link
+      {/* <Link
       to= "buoi3">
        <Text style = {styles.titleText}> Buoi 3</Text>
-      </Link>
+      </Link> */}
+      {list.map((data , index) => {
+        return (
+          <View key={index}>
+            <Link to ={data.to}>
+            <Text style = {styles.titleText}>
+              {data.title}
+            </Text>
+            </Link>
+          </View>
+        )
+      })}
     </View>
   )
 }
@@ -53,6 +78,8 @@ const App = () => {
         <Routes>
         <Route path = "/" element = {<Home/>}/>
         <Route path= "buoi3" element = {<Btbuoi3/>}/>
+        <Route path= "todo" element = {<Todo/>}/>
+        <Route path='buoi5' element = {<Btbuoi5/>} />
         </Routes>
         
   </NativeRouter>
@@ -76,7 +103,8 @@ const styles = StyleSheet.create({
     fontSize : 20,
     borderWidth : 1,
     padding : 7,
-    backgroundColor : 'gray'
+    backgroundColor : 'gray',
+    margin : 10
   }
 });
 
