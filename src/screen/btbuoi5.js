@@ -40,7 +40,7 @@ export default class Btbuoi5 extends Component {
                 <View style = {styles.menuIcon}>
                     {
                         this.feeling.map((mood , index) => (
-                            <TouchableOpacity onPress={() => this.handleMoodChange(index)}>
+                            <TouchableOpacity onPress={() => this.handleMoodChange(index)} key={index}>
                                 <Image source={mood} style = {styles.itemIcon} />
                             </TouchableOpacity>
                         )
