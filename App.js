@@ -41,9 +41,11 @@ const Home = () => {
   {
     title : 'To Do App',
     to : 'todo'
-  }]
+  },
+]
   return (
     <View style = {styles.home}>
+      <Text style = {styles.header}>React Native 04</Text>
       <Text style = {styles.headerText}> 
         Danh sach Bai tap :
       </Text>
@@ -51,9 +53,10 @@ const Home = () => {
       to= "buoi3">
        <Text style = {styles.titleText}> Buoi 3</Text>
       </Link> */}
+      <View style = {styles.menuContainer}>
       {list.map((data , index) => {
         return (
-          <View key={index}>
+          <View key={index} style = {styles.itemMenu}>
             <Link to ={data.to}>
             <Text style = {styles.titleText}>
               {data.title}
@@ -62,6 +65,7 @@ const Home = () => {
           </View>
         )
       })}
+      </View>
     </View>
   )
 }
@@ -105,6 +109,16 @@ const styles = StyleSheet.create({
     padding : 7,
     backgroundColor : 'gray',
     margin : 10
+  },
+  menuContainer : {
+    flexDirection : 'row',
+    flexWrap : 'wrap',
+    marginHorizontal : 25
+  },
+  header : {
+    fontSize : 30,
+    fontWeight : '700',
+    color : 'green'
   }
 });
 
