@@ -26,6 +26,7 @@ import {
 import { Link, NativeRouter, Route, Routes } from 'react-router-native';
 import Btbuoi3 from './src/screen/btbuoi3';
 import Btbuoi5 from './src/screen/btbuoi5';
+import Gameapp from './src/screen/gameapp';
 import Todo from './src/screen/todo';
 
 
@@ -37,6 +38,10 @@ const Home = () => {
   {
     title : 'BT Buoi 5',
     to : 'buoi5'
+  },
+  {
+    title : 'Game App',
+    to : 'gameapp'
   },
   {
     title : 'To Do App',
@@ -84,6 +89,7 @@ const App = () => {
         <Route path= "buoi3" element = {<Btbuoi3/>}/>
         <Route path= "todo" element = {<Todo/>}/>
         <Route path='buoi5' element = {<Btbuoi5/>} />
+        <Route path='gameapp' element= {<Gameapp/>} />
         </Routes>
         
   </NativeRouter>
